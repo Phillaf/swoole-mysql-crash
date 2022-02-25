@@ -5,7 +5,7 @@
 1. Start Swoole server with `docker-compose up` 
 2. Once the containers finishes up booting, run the test script with `sh test.sh` 
 
-test.sh simply run curl 10 times on localhost and prints the output. "success" means that the page rendered. <empty> means that curl didn't get a response. 
+test.sh simply run curl 10 times on localhost and prints the output. "success" means that the page rendered. empty means that curl didn't get a response. 
 
 The output of of test.sh looks like this: 
 ```
