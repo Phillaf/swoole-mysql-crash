@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+
+  swoole:
+    build: .
+    environment:
+      - AUTORELOAD_PROGRAMS=swoole
+      - AUTORELOAD_ANY_FILES=1
+    ports:
+      - "80:80"
+    volumes:
+      - ".:/var/www"
+
+  mysql:
+    restart: always
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=user
+    volumes:
+      # - ./mysql-data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
